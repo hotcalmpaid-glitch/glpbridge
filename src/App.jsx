@@ -5,6 +5,9 @@ const FONTS = `@import url('https://fonts.googleapis.com/css2?family=Fraunces:it
 // ⬇️ UPDATE THIS CODE EVERY 15 DAYS
 const ACCESS_CODE = "GLPBRIDGE";
 
+const GLP_BRIDGE_LINK = "YOUR_GLP_BRIDGE_STAN_STORE_LINK";
+const THIRTY_DAYS_LINK = "https://stan.store/hotcalmpaid/p/the-glp1-bridge";
+
 // ⬇️ STAN STORE LINK FOR 30 DAYS TO STABLE
 const THIRTY_DAYS_LINK = "https://stan.store/hotcalmpaid/p/-usfy5q7e";
 
@@ -228,7 +231,7 @@ function AccessGate({ onUnlock }) {
           onKeyDown={e=>e.key==="Enter"&&handleSubmit()} maxLength={20} />
         {error && <p className="gate-error">That code doesn't look right. Check your confirmation email and try again.</p>}
         <button className="btn btn-primary" onClick={handleSubmit} disabled={!code.trim()}>Unlock My Plan →</button>
-        <p className="gate-note">Don't have a code yet? <a href={THIRTY_DAYS_LINK} target="_blank" rel="noreferrer">Get access here for $17 →</a></p>
+        <p className="gate-note">Don't have a code yet? <a href={GLP_BRIDGE_LINK} target="_blank" rel="noreferrer">Get access here for $17 →</a></p>
       </div>
     </div>
   );
