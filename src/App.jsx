@@ -302,8 +302,17 @@ Respond ONLY in valid JSON with no markdown, no preamble:
 {"weeklyCalories":${n.targetCals},"weeklyProtein":${n.targetProtein},"days":[{"day":"Monday","meals":{"breakfast":{"name":"...","description":"...","calories":0,"protein":0},"lunch":{"name":"...","description":"...","calories":0,"protein":0},"snack":{"name":"...","description":"...","calories":0,"protein":0},"dinner":{"name":"...","description":"...","calories":0,"protein":0}}}],"grocery":{"Proteins":["..."],"Produce":["..."],"Dairy & Eggs":["..."],"Pantry & Canned":["..."],"Spices & Condiments":["..."]}}`;
 
       const res = await fetch("https://api.anthropic.com/v1/messages", {
-        method:"POST", headers:{"Content-Type":"application/json"},
-        body: JSON.stringify({ model:"claude-sonnet-4-20250514", max_tokens:4000, messages:[{role:"user",content:prompt}] })
+method:"POST", headers:{
+  "Content-Type":"application/json",
+  "x-api-key": import.meta.env.VITE_ANTHROPIC_API_KEY,
+  "anthropic-version": "2023-06-01",
+  "anthropic-dangerous-direct-browser-access": "true"
+},
+```
+
+If you still can't find it, try searching for just:
+```
+api.anthropic.com        body: JSON.stringify({ model:"claude-sonnet-4-20250514", max_tokens:4000, messages:[{role:"user",content:prompt}] })
       });
       const data = await res.json();
       const text = data.content.map(b=>b.text||"").join("").replace(/```json|```/g,"").trim();
