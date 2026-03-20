@@ -510,6 +510,7 @@ Respond ONLY in valid JSON with no markdown, no preamble:
               </div>
               <div style={{display:"flex",gap:10}}>
                 <button className="btn btn-outline btn-sm" onClick={()=>setStep(1)}>← Back</button>
+                <button className="btn btn-outline btn-sm" onClick={()=>window.print()}>🖨️ Print / Save as PDF</button>
                 <button className="btn btn-primary" style={{flex:1,marginTop:0}} onClick={()=>setStep(3)}>View Grocery List →</button>
               </div>
             </div>
@@ -538,6 +539,7 @@ Respond ONLY in valid JSON with no markdown, no preamble:
               </div>
               <div style={{display:"flex",gap:10}}>
                 <button className="btn btn-outline btn-sm" onClick={()=>setStep(2)}>← Meal Plan</button>
+               <button className="btn btn-outline btn-sm" onClick={()=>window.print()}>🖨️ Print / Save as PDF</button>
                 <button className="btn btn-primary" style={{flex:1,marginTop:0}} onClick={()=>setStep(4)}>See What's Next →</button>
               </div>
             </div>
