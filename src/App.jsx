@@ -5,9 +5,6 @@ const FONTS = `@import url('https://fonts.googleapis.com/css2?family=Fraunces:it
 // ⬇️ UPDATE THIS CODE EVERY 15 DAYS
 const ACCESS_CODE = "GLPBRIDGE";
 
-// GLP BRIDGE LINK 
-const GLP_BRIDGE_LINK = "YOUR_GLP_BRIDGE_STAN_STORE_LINK"=https://stan.store/hotcalmpaid/p/the-glp1-bridge
-
 // ⬇️ STAN STORE LINK FOR 30 DAYS TO STABLE
 const THIRTY_DAYS_LINK = "https://stan.store/hotcalmpaid/p/-usfy5q7e";
 
@@ -231,7 +228,7 @@ function AccessGate({ onUnlock }) {
           onKeyDown={e=>e.key==="Enter"&&handleSubmit()} maxLength={20} />
         {error && <p className="gate-error">That code doesn't look right. Check your confirmation email and try again.</p>}
         <button className="btn btn-primary" onClick={handleSubmit} disabled={!code.trim()}>Unlock My Plan →</button>
-        <p className="gate-note">Don't have a code yet? <a href={GLP_BRIDGE_LINK} target="_blank" rel="noreferrer">Get access here for $17 →</a></p>
+        <p className="gate-note">Don't have a code yet? <a href={THIRTY_DAYS_LINK} target="_blank" rel="noreferrer">Get access here for $17 →</a></p>
       </div>
     </div>
   );
@@ -302,17 +299,13 @@ Respond ONLY in valid JSON with no markdown, no preamble:
 {"weeklyCalories":${n.targetCals},"weeklyProtein":${n.targetProtein},"days":[{"day":"Monday","meals":{"breakfast":{"name":"...","description":"...","calories":0,"protein":0},"lunch":{"name":"...","description":"...","calories":0,"protein":0},"snack":{"name":"...","description":"...","calories":0,"protein":0},"dinner":{"name":"...","description":"...","calories":0,"protein":0}}}],"grocery":{"Proteins":["..."],"Produce":["..."],"Dairy & Eggs":["..."],"Pantry & Canned":["..."],"Spices & Condiments":["..."]}}`;
 
       const res = await fetch("https://api.anthropic.com/v1/messages", {
-method:"POST", headers:{
-  "Content-Type":"application/json",
-  "x-api-key": import.meta.env.VITE_ANTHROPIC_API_KEY,
-  "anthropic-version": "2023-06-01",
-  "anthropic-dangerous-direct-browser-access": "true"
-},
-```
-
-If you still can't find it, try searching for just:
-```
-api.anthropic.com        body: JSON.stringify({ model:"claude-sonnet-4-20250514", max_tokens:4000, messages:[{role:"user",content:prompt}] })
+        method:"POST", headers:{
+          "Content-Type":"application/json",
+          "x-api-key": import.meta.env.VITE_ANTHROPIC_API_KEY,
+          "anthropic-version": "2023-06-01",
+          "anthropic-dangerous-direct-browser-access": "true"
+        },
+        body: JSON.stringify({ model:"claude-sonnet-4-20250514", max_tokens:4000, messages:[{role:"user",content:prompt}] })
       });
       const data = await res.json();
       const text = data.content.map(b=>b.text||"").join("").replace(/```json|```/g,"").trim();
@@ -595,3 +588,4 @@ api.anthropic.com        body: JSON.stringify({ model:"claude-sonnet-4-20250514"
     </>
   );
 }
+
