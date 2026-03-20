@@ -228,8 +228,7 @@ function AccessGate({ onUnlock }) {
           onKeyDown={e=>e.key==="Enter"&&handleSubmit()} maxLength={20} />
         {error && <p className="gate-error">That code doesn't look right. Check your confirmation email and try again.</p>}
         <button className="btn btn-primary" onClick={handleSubmit} disabled={!code.trim()}>Unlock My Plan →</button>
-        <p className="gate-note">Don't have a code yet? <a href={THIRTY_DAYS_LINK} target="_blank" rel="noreferrer">Get access here for $17 →</a></p>
-      </div>
+<p className="gate-note">Don't have a code yet? <a href="https://stan.store/hotcalmpaid/p/the-glp1-bridge" target="_blank" rel="noreferrer">Get access here for $17 →</a></p>      </div>
     </div>
   );
 }
