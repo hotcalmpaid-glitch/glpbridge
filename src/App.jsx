@@ -5,8 +5,8 @@ const FONTS = `@import url('https://fonts.googleapis.com/css2?family=Fraunces:it
 // ⬇️ UPDATE THIS CODE EVERY 15 DAYS
 const ACCESS_CODE = "GLPBRIDGE";
 
-const GLP_BRIDGE_LINK = "YOUR_GLP_BRIDGE_STAN_STORE_LINK";
-const THIRTY_DAYS_LINK = "https://stan.store/hotcalmpaid/p/the-glp1-bridge";
+// GLP BRIDGE LINK 
+const GLP_BRIDGE_LINK = "YOUR_GLP_BRIDGE_STAN_STORE_LINK"=https://stan.store/hotcalmpaid/p/the-glp1-bridge
 
 // ⬇️ STAN STORE LINK FOR 30 DAYS TO STABLE
 const THIRTY_DAYS_LINK = "https://stan.store/hotcalmpaid/p/-usfy5q7e";
